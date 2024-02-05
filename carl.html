@@ -1,0 +1,867 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<?php
+// include_once 'classes/libraries/MysqliDb.php';
+include 'classes/courses_show.class.php';
+?>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Chat Bot - Upang Pedro</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/images/university_logo.png" rel="icon">
+  <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/plugins/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/plugins/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/phinma-upang.css" rel="stylesheet">
+  <!-- =======================================================
+  * Template Name: Medilab - v4.9.1
+  * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+<style>
+  #hero {
+    height: 100%;
+  }
+
+  #hero h1 {
+    font-size: 70px;
+    text-transform: none;
+    line-height: 90px;
+  }
+
+  #header {
+    top: 0px;
+  }
+
+  #hero {
+    margin-bottom: -70px;
+  }
+
+  #hero .btn-get-started {
+    margin-top: 10px;
+  }
+
+  .counts .count-box {
+    border-radius: 15px;
+  }
+
+  .counts .count-box i {
+    background: #443C68;
+    color: lightgreen;
+  }
+
+  .why-us .content {
+    background: transparent;
+    color: black;
+  }
+
+  .why-us .content h3 {
+    color: green;
+  }
+
+  .testimonial-img {
+    padding: 0px 50px;
+  }
+
+  .helpdesk {
+    align-items: flex-end
+  }
+
+  @media (max-width: 768px) {
+    .helpdesk {
+      align-items: center;
+      margin-top: 50px;
+    }
+  }
+
+  .card-body h5 {
+    color: green;
+  }
+
+
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #443C68;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+  }
+
+  .hoverable:hover .overlay {
+    width: 100%;
+    padding: 15px;
+    overflow-y: auto;
+  }
+
+  .text {
+    white-space: nowrap;
+    color: white;
+    font-size: 12pt;
+    /* position: absolute; */
+    overflow: hidden;
+    /* top: 15px; */
+    /* left: 15px; */
+    /* transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%); */
+  }
+</style>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <!-- <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
+        <i class="bi bi-phone"></i> +1 5589 55488 55
+      </div>
+      <div class="d-none d-lg-flex social-links align-items-center">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+
+      <h1 class="logo me-auto"><a href="index.php">University Of Pangasinan</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/images/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active text-phinmaupang" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto text-phinmaupang " href="#why-us">About</a></li>
+          <li><a class="nav-link scrollto text-phinmaupang" href="#about">Courses</a></li>
+          <li><a class="nav-link scrollto text-phinmaupang" href="#departments">Departments</a></li>
+          <li><a class="nav-link scrollto text-phinmaupang" href="#doctors">Developers</a></li>
+          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <a href="auth.php" class="appointment-btn scrollto bg-phinmaupang">Login</a>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center bg-light" style="background: unset;">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-lg-7 col-md-7 d-flex flex-column justify-content-center helpdesk">
+          <div class="col-lg-10">
+            <h1 class="text-phinmaupang">UPANG</h1>
+            <h1 style="color: lightgray;">Helpdesk</h1>
+            <a href="#about" class="btn-get-started scrollto bg-phinmaupang">Get Started</a>
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-5">
+          <img src="assets/images/question.png" alt="" style="width:100%; height: auto;">
+        </div>
+      </div>
+      <!-- <h1>Welcome to Medilab</h1>
+      <h2>We are team of talented designers making websites with Bootstrap</h2> -->
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+    <!-- <section id="counts" class="counts">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="count-box">
+              <i class="bi bi-mortarboard-fill"></i>
+              <span data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Courses</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+            <div class="count-box">
+              <i class="fa-solid fa-user-graduate"></i>
+              <span data-purecounter-start="0" data-purecounter-end="1300" data-purecounter-duration="1" class="purecounter plus"></span>
+              <p>Students</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+            <div class="count-box">
+              <i class="fa-solid fa-chalkboard-user"></i>
+              <span data-purecounter-start="0" data-purecounter-end="80" data-purecounter-duration="1" class="purecounter plus"></span>
+              <p>Teachers</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+            <div class="count-box">
+              <i class="fa-solid fa-face-smile"></i>
+              <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1" class="purecounter percent"></span>
+              <p>Passing Rate</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section> -->
+    <!-- ======= Why Us Section ======= -->
+
+    <section id="why-us" class="why-us">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-6 d-flex align-items-stretch">
+            <div class="icon-boxes d-flex flex-column justify-content-center">
+              <img src="assets/images/studying.png" alt="" style="width: 100%; height:auto">
+            </div><!-- End .content-->
+          </div>
+          <div class="col-lg-6 d-flex align-items-stretch">
+            <div class="content">
+              <h3 class="text-center text-phinmaupang">Why Choose PHINMA Education?</h3>
+              <p style="text-align: center; font-size: 14pt;">
+                As an innovative Philippine Business Institution, PHINMA believes that access to quality Education is the solution to many of our Country's problems.
+                While the enrollment rate in the Philippines has always been high, PHINMA discovered that most students do not finish Tertiary Education.
+                Students were willing to learn but did not have the resources to stay in school. That is why in 2004, PHINMA Education was established.
+                PHIMA Education is making accessible in key growth areas all over the Country. It has transformed existing educational institutions to provide better academic,
+                operational, and community support for ll of its Students. Through its eforts more students are able to earn College Degrees and become globally competetive professionals.
+                The PHINMA Education Network is now compose of six(6) Secondary and Tertiary Educational institutions spread throughout the Country.
+              </p>
+              <div class="text-center">
+                <a href="javascript:void(0)" class="more-btn bg-success bg-phinmaupang learn_more">Learn More <i class="bx bx-chevron-right"></i></a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about bg-light">
+      <div class="container">
+        <div class="row text-center justify-content-center">
+          <h1 style="width:auto; color:gray">OFFERED</h1>
+          <h1 style="width:auto; color:lightgreen" class="text-phinmaupang">COURSES</h1>
+        </div>
+        <div class="col-lg-12">
+          <div class="swiper swiper-courses mt-5 pb-3" data-aos="fade-up" data-aos-delay="100" style="position:relative;">
+            <div class="swiper-wrapper d-flex flex-row card-deck">
+              <?php
+              $course = new Courses();
+              $all_courses = $course->getCourse();
+              foreach ($all_courses as $data_courses) {
+              ?>
+                <div class="swiper-slide" style="height:auto">
+                  <div class="card d-flex flex-column hoverable" style="height:100%;overflow: hidden; position:relative">
+                    <div class="col-lg-12" style="overflow: hidden;">
+                      <img src="assets/images/courses/<?php echo $data_courses["image"] ?>" class="testimonial-img" alt="" style="width: 100%;">
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title text-center"><?php echo $data_courses["title"] ?></h5>
+                      <p class="card-text">
+                        <?php echo $data_courses["description"] ?></p>
+                    </div>
+                    <div class="overlay">
+                      <div class="text">Faculty Members</div>
+                      <hr>
+                      <?php
+                      $department_name = $data_courses["department"];
+                      // echo $department_name;
+                      $depts = $GLOBALS['db']->rawQuery('SELECT * FROM faculty WHERE department = "' . $department_name . '"');
+                      if (count($depts) > 0) {
+                        foreach ($depts as $departments) {
+                      ?>
+                          <div class="text mx-3"><?php echo $departments["name"] ?></div>
+                          <hr>
+                      <?php
+                        }
+                      }
+                      ?>
+                    </div>
+                  </div>
+                </div>
+              <?php
+              }
+              ?>
+              <!-- <div class="swiper-slide">
+                <div class="card d-flex flex-column hoverable" style="height:100%;overflow: hidden;">
+                  <div class="col-lg-12" style="overflow: hidden;">
+                    <img src="assets/images/architecture.png" class="testimonial-img" alt="" style="width: 100%;">
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Architecture</h5>
+                    <p class="card-text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vestibulum ipsum eu rhoncus consectetur. Aliquam pharetra iaculis massa nec malesuada. Aliquam erat volutpat. Integer a nulla consectetur, porta elit id, ullamcorper justo. </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card d-flex flex-column hoverable" style="height:100%;overflow: hidden;">
+                  <div class="col-lg-12" style="overflow: hidden;">
+                    <img src="assets/images/medical.png" class="testimonial-img" alt="" style="width: 100%;">
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Medical Technology</h5>
+                    <p class="card-text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vestibulum ipsum eu rhoncus consectetur. Aliquam pharetra iaculis massa nec malesuada. Aliquam erat volutpat. Integer a nulla consectetur, porta elit id, ullamcorper justo. </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card d-flex flex-column hoverable" style="height:100%;overflow: hidden;">
+                  <div class="col-lg-12" style="overflow: hidden;">
+                    <img src="assets/images/information.png" class="testimonial-img" alt="" style="width: 100%;">
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Information Technology</h5>
+                    <p class="card-text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vestibulum ipsum eu rhoncus consectetur. Aliquam pharetra iaculis massa nec malesuada. Aliquam erat volutpat. Integer a nulla consectetur, porta elit id, ullamcorper justo. </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card d-flex flex-column hoverable" style="height:100%;overflow: hidden;">
+                  <div class="col-lg-12" style="overflow: hidden;">
+                    <img src="assets/images/law.png" class="testimonial-img" alt="" style="width: 100%;">
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Criminal Justice</h5>
+                    <p class="card-text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vestibulum ipsum eu rhoncus consectetur. Aliquam pharetra iaculis massa nec malesuada. Aliquam erat volutpat. Integer a nulla consectetur, porta elit id, ullamcorper justo. </p>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+            <div class="course-prev" style="position: absolute;top:40%; z-index:1;left:-30px;">
+              <button class="btn btn-light" style="width:100%;background: rgb(119 149 86); border-radius:60px; height:60px; width: 60px; text-align: right;box-shadow: -2px 0 5px rgba(0,0,0,0.3); opacity: 0.7;">
+                <i class="bi bi-chevron-left" style="color:white;"></i>
+              </button>
+            </div>
+            <div class="course-next" style="position: absolute;top:40%; z-index:1;right:-30px;">
+              <button class="btn btn-light" style="background:rgb(119 149 86); border-radius:60px; height:60px; width: 60px; text-align: left;box-shadow: -2px 0 5px rgba(0,0,0,0.3); opacity: 0.7;">
+                <i class="bi bi-chevron-right" style="color:white;"></i>
+              </button>
+            </div>
+            <div class="swiper-pagination-main" style="text-align:center"></div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Counts Section ======= -->
+
+
+    <!-- ======= Departments Section ======= -->
+    <section id="departments" class="departments">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Departments</h2>
+        </div>
+
+        <div class="row gy-4">
+          <div class="col-lg-3">
+            <ul class="nav nav-tabs flex-column">
+              <li class="nav-item">
+                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">CAHS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">CAS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">CCJE</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-4">CELA</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-5">CEA</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-6">CITE</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-7">CMA</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-9">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="tab-1">
+                <div class="row gy-4">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>CAHS</h3>
+                    <p class="fst-italic">College Of Allied Health and Sciences</p>
+                    <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa
+                      odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni
+                      nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="assets/images/departments-1.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-2">
+                <div class="row gy-4">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>CAS</h3>
+                    <p class="fst-italic">College Of Arts & Science</p>
+                    <p>Ea ipsum voluptatem consequatur quis est. Illum error ullam omnis quia et reiciendis sunt sunt
+                      est. Non aliquid repellendus itaque accusamus eius et velit ipsa voluptates. Optio nesciunt eaque
+                      beatae accusamus lerode pakto madirna desera vafle de nideran pal</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="assets/images/departments-2.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-3">
+                <div class="row gy-4">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>CCJE</h3>
+                    <p class="fst-italic">College Of Criminal Justice Education</p>
+                    <p>Iure officiis odit rerum. Harum sequi eum illum corrupti culpa veritatis quisquam. Neque
+                      necessitatibus illo rerum eum ut. Commodi ipsam minima molestiae sed laboriosam a iste odio. Earum
+                      odit nesciunt fugiat sit ullam. Soluta et harum voluptatem optio quae</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="assets/images/departments-3.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-4">
+                <div class="row gy-4">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>CELA</h3>
+                    <p class="fst-italic">College Of Education & Liberal Arts</p>
+                    <p>Eaque consequuntur consequuntur libero expedita in voluptas. Nostrum ipsam necessitatibus aliquam
+                      fugiat debitis quis velit. Eum ex maxime error in consequatur corporis atque. Eligendi asperiores
+                      sed qui veritatis aperiam quia a laborum inventore</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="assets/images/departments-4.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-5">
+                <div class="row gy-4">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>CEA</h3>
+                    <p class="fst-italic">College Of Engineering & Architecture</p>
+                    <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut non quam ut
+                      quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati sed est sint aut vitae
+                      molestiae voluptate vel</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="assets/images/departments-5.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-6">
+                <div class="row gy-4">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>CITE</h3>
+                    <p class="fst-italic">ollege Of Information Technology Education</p>
+                    <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut non quam ut
+                      quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati sed est sint aut vitae
+                      molestiae voluptate vel</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="assets/images/departments-6.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-7">
+                <div class="row gy-4">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>CMA</h3>
+                    <p class="fst-italic">College Of Management & Accounting</p>
+                    <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut non quam ut
+                      quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati sed est sint aut vitae
+                      molestiae voluptate vel</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="assets/images/departments-7.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Departments Section -->
+
+    <!-- ======= Doctors Section ======= -->
+    <section id="doctors" class="doctors bg-light">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Developers</h2>
+          <p>WE ARE DEVELOPERS</p>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+
+          <div class="col-lg-6">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="assets/images/anon.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Mitchyll Valencerina</h4>
+                <span>Project Manager</span>
+                <p>In order to be irreplaceable, one must always be different</p>
+                <div class="social">
+                  <a href=""><i class="ri-twitter-fill"></i></a>
+                  <a href=""><i class="ri-facebook-fill"></i></a>
+                  <a href=""><i class="ri-instagram-fill"></i></a>
+                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4 mt-lg-0">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="assets/images/anon.png" class="img-fluid" alt=""></div>
+
+              <div class="member-info">
+                <h4>Karl Angelo Tadeo</h4>
+                <span>UX/UI Designer</span>
+                <p>Testing leads to failure, and failure leads to understanding.</p>
+                <div class="social">
+                  <a href=""><i class="ri-twitter-fill"></i></a>
+                  <a href=""><i class="ri-facebook-fill"></i></a>
+                  <a href=""><i class="ri-instagram-fill"></i></a>
+                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="assets/images/anon.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Donna Bhel Macalanda</h4>
+                <span>Researcher</span>
+                <p>Experience is the name everyone gives to their mistakes</p>
+                <div class="social">
+                  <a href=""><i class="ri-twitter-fill"></i></a>
+                  <a href=""><i class="ri-facebook-fill"></i></a>
+                  <a href=""><i class="ri-instagram-fill"></i></a>
+                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="assets/images/anon.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Aldrich De Guzman</h4>
+                <span>Back-End Developer</span>
+                <p>In order to be irreplaceable, one must always be different</p>
+                <div class="social">
+                  <a href=""><i class="ri-twitter-fill"></i></a>
+                  <a href=""><i class="ri-facebook-fill"></i></a>
+                  <a href=""><i class="ri-instagram-fill"></i></a>
+                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="assets/images/anon.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Justin Luis Ubando</h4>
+                <span>Front-End Developer</span>
+                <p>The best error message is the one that never shows up.</p>
+                <div class="social">
+                  <a href=""><i class="ri-twitter-fill"></i></a>
+                  <a href=""><i class="ri-facebook-fill"></i></a>
+                  <a href=""><i class="ri-instagram-fill"></i></a>
+                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Doctors Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact" style="padding-bottom:0px;">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Address</h2>
+        </div>
+      </div>
+
+      <div>
+        <iframe style="border:0; width: 100%; height: 450px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.354106827739!2d120.34032601453902!3d16.04710408889461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x339167fe6bba4d67%3A0xf54b516c2c5d10b6!2sPHINMA-University%20of%20Pangasinan!5e0!3m2!1sen!2sph!4v1677992166356!5m2!1sen!2sph" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">More about UPang</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            The story of the PHINMA University of Pangasinan started in 1925. Francisco Benitez, Dr. Apolinario de los Santos, Dr. Sylvestre Pascual and Dr. Blas F. Rayos, all esteemed Pangasinenses, built the Dagupan Institute, a school which offered primary, secondary, and vocational education. The Institute was renamed to Dagupan Junior College after the Second World War, expanded its course offerings and added a Graduate School. In 1950, the school was transformed and became Dagupan Colleges.
+          </div>
+          <div class="mb-3">
+            The school continued to provide more courses to fulfill its commitment of delivering excellent education to the youth not just in Pangasinan, but Northern Luzon. Dagupan Colleges was granted university status through the University Charter of the Department of Education, and was given the name University of Pangasinan.
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row justify-content-between">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>CONTACT US</h3>
+            <p>
+              2400 Dagupan City <br>
+              Arellano Street<br>
+              Pangasinan <br><br>
+              <strong>Phone:</strong> +63 995-078-5660<br>
+              <strong>Email:</strong> info.up@phinmaed.com<br>
+            </p>
+          </div>
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <img src="assets/images/uplogo.png" alt="" style="height:120px;">
+            <div class="col-lg-8" style="margin-top:10px;">
+              <a class="d-flex flex-row footerLink" href="https://www.facebook.com/phinmaupang" target="_blank" style="font-size: 12pt;font-weight: 600!important;font-family: Montserrat, 'Open Sans', Helvetica, Arial, sans-serif!important;color: #222843; letter-spacing: 1.5px; ">
+                <!-- <i class="bi bi-facebook footerLogo" style="font-size: 18pt; color: #00aeef;"></i> -->
+                <!-- <i class="fa fa-circle-thin"></i> -->
+                <span class="fa-stack footerLogo" style="font-size: 20pt;">
+                  <i class="fa fa-circle-thin fa-stack-2x" style="color:#d3f0fd"></i>
+                  <i class="fab fa-facebook fa-stack-1x fa-inverse" style="font-size: 20pt; color: #00aeef;"></i>
+                </span>
+                <div class="col-lg-10 d-flex flex-column justify-content-center" style="margin-left:15px;">
+                  FOLLOW OUR FACEBOOK PAGE
+                </div>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="container d-md-flex py-4">
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>DEVELOPERS</span></strong>. All Rights Reserved
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <!-- <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a> -->
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <style>
+    #chat_bot {
+      overflow: hidden;
+      transition: .5s ease;
+      height: 0;
+      width: 0;
+      padding: 0px;
+      border: 0px;
+    }
+
+    .active_chat_bot {
+      width: 325px !important;
+      height: 440px !important;
+    }
+  </style>
+  <div class="col-lg-3" id="chat_bot" style="position: fixed;right: 60px;bottom: 60px;z-index: 1000;">
+    <div class="card">
+      <div class="card-header d-flex justify-content-between align-items-center p-3" style="border-top: 4px solid #ffa900;">
+        <h6 class="mb-0">Pedro Chatbot</h6>
+        <div class="d-flex flex-row align-items-center">
+          <a href="#" onclick="closeChatbot();" id="btnHide"><i class="fas fa-minus me-3 text-muted fa-xs"></i></a>
+          <a href="#" onclick="closeChatbot();" id="btnClose"><i class="fas fa-times text-muted fa-xs"></i></a>
+        </div>
+      </div>
+      <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 300px; overflow-y: auto" id="chatArea">
+      </div>
+      <div class="card-footer text-muted d-flex justify-content-start align-items-center p-3">
+        <div class="input-group mb-0">
+          <input type="text" class="form-control" placeholder="Type message" aria-label="Visitor chatbox" aria-describedby="btnSend" id="v_chatbox" disabled />
+          <button class="btn btn-warning" type="button" id="btnSend" style="padding-top: .55rem;" disabled>
+            SEND
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="javascript:void(0)" id="open_chat" class="d-flex align-items-center justify-content-center bg-success bg-phinmaupang" style="position: fixed;right: 60px;bottom: 15px;z-index: 996;width: 40px;height: 40px;border-radius: 4px;transition: all 0.4s;"><i class="fas fa-robot" style="font-size: 28px;color: #fff;line-height: 0;"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/plugins/jquery/jquery.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script src="assets/pedrojs/chatbot.js"></script>
+
+</body>
+
+</html>
+
+<script>
+  function closeChatbot() {
+    document.getElementById("open_chat").click();
+  }
+  $(document).ready(function() {
+    var asd = new PureCounter();
+    var counters = document.querySelectorAll('.plus');
+    var percentage = document.querySelector('.percent');
+    setTimeout(function() {
+      // console.log(counters);
+      percentage.innerHTML = percentage.innerHTML + '%';
+      for (var i = 0; i < counters.length; i++) {
+        // console.log("HEllo");
+        var counter = counters[i];
+        counter.innerHTML = counter.innerHTML + '+';
+      }
+    }, 1500);
+
+    $(".learn_more").click(function() {
+      $('#exampleModal').modal('show');
+    });
+    $("#open_chat").click(function() {
+      console.log("helloo");
+      // $('#open_chat').removeClass("active_chat_bot");
+      if ($('#chat_bot').hasClass("active_chat_bot")) {
+        $('#chat_bot').removeClass("active_chat_bot");
+      } else {
+        $('#chat_bot').addClass("active_chat_bot");
+      }
+      // $('.overlay').css({
+      //     'width': '80%',
+      //     'left': '0'
+      // });
+    });
+
+    const swiper_main = new Swiper('.swiper-courses', {
+      // Default parameters
+      slidesPerView: 3,
+      speed: 500,
+      loop: true,
+      // navigation: {
+      //   nextEl: '.next',
+      //   prevEl: '.previous',
+      // },
+      breakpoints: {
+        // when window width is >= 320px
+        150: {
+          slidesPerView: 1,
+          spaceBetween: 20
+        },
+        // when window width is >= 480px
+        767: {
+          slidesPerView: 2,
+          spaceBetween: 30
+        },
+        // when window width is >= 640px
+        1200: {
+          slidesPerView: 3,
+          spaceBetween: 40
+        }
+      },
+      navigation: {
+        nextEl: '.course-next',
+        prevEl: '.course-prev',
+      },
+      // Responsive breakpoints
+      pagination: {
+        el: '.swiper-pagination-main',
+      }
+    });
+  });
+</script>
